@@ -4,7 +4,7 @@
 	<include>dialogeffect</include>
 	<depth>DepthDialog+</depth>
 	<coordinates>
-		<left>110</left>
+		<left>205</left>
 		<top>120</top>
 	</coordinates>
 	<controls>
@@ -95,14 +95,6 @@
 				<height>30</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>DialogHeader.png</texture>
-			</control>
-			<control type="image">
-				<left>870</left>
-				<top>2</top>
-				<width>180</width>
-				<height>200</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>smsinput.png</texture>
 			</control>
 			<control type="group">
 				<left>30</left>
