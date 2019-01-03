@@ -572,6 +572,10 @@ msgctxt "#31956"
 msgid "MUSIC"
 msgstr "HUDBA"
 
+msgctxt "#31957"
+msgid "ADD-ONS"
+msgstr "PROGRAMY"
+
 msgctxt "#31958"
 msgid "PLAY DISC"
 msgstr "PŘEHRÁT DISK"

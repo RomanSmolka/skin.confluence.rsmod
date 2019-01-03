@@ -2,63 +2,15 @@
 <window>
 	<defaultcontrol></defaultcontrol>
 	<controls>
-		<!-- view mode, sizing, screen resolution -->
-		<control type="group" id="0">
-			<depth>DepthOSD+</depth>
-			<left>0</left>
-			<top>20</top>
-			<animation effect="fade" time="150">VisibleChange</animation>
-			<control type="image">
-				<description>media info background image</description>
-				<left>0</left>
-				<top>0</top>
-				<width>1280</width>
-				<height>160</height>
-				<texture>black-back.png</texture>
-			</control>
-			<control type="label" id="10">
-				<description>row 1 label</description>
-				<left>50</left>
-				<top>10</top>
-				<width>1180</width>
-				<height>30</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<label></label>
-			</control>
-			<control type="label" id="11">
-				<description>row 2 label</description>
-				<left>50</left>
-				<top>55</top>
-				<width>1180</width>
-				<height>30</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<label></label>
-			</control>
-			<control type="label" id="12">
-				<description>row 3 label</description>
-				<left>50</left>
-				<top>100</top>
-				<width>1180</width>
-				<height>45</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<label></label>
-			</control>
-		</control>
 		<!-- media infos -->
 		<control type="group" id="1">
 			<depth>DepthOSD</depth>
-			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] + ![Window.IsVisible(OSDSubtitleSettings) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(OSDAudioDSPSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVRChannelGuide) | Window.IsVisible(SliderDialog)]</visible>
-			<animation effect="fade" time="150">VisibleChange</animation>
+			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] + ![Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(SliderDialog)]</visible>
+			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="image" id="1">
-				<left>-20</left>
+				<left>0</left>
 				<top>-150</top>
-				<width>1320</width>
+				<width>1280</width>
 				<height>256</height>
 				<texture flipy="true" border="1">HomeNowPlayingBack.png</texture>
 			</control>
@@ -152,7 +104,7 @@
 			<control type="group" id="1">
 				<left>330</left>
 				<top>185r</top>
-				<control type="label" id="1">
+				<!-- <control type="label" id="1">
 					<description>Heading label</description>
 					<left>0</left>
 					<top>0</top>
@@ -166,7 +118,7 @@
 					<shadowcolor>black</shadowcolor>
 					<visible>![VideoPlayer.Content(LiveTV) + PVR.IsRecordingPlayingChannel]</visible>
 					<animation effect="slide" start="0,0" end="0,25" time="0" condition="!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV) + !PVR.IsPlayingRecording">conditional</animation>
-				</control>
+				</control> -->
 				<control type="image" id="1">
 					<top>0</top>
 					<width>50</width>
@@ -191,7 +143,7 @@
 				</control>
 				<control type="label" id="1">
 					<description>Studio label</description>
-					<left>20</left>
+					<left>0</left>
 					<top>30</top>
 					<width>910</width>
 					<height>25</height>
@@ -204,7 +156,7 @@
 				</control>
 				<control type="label" id="1">
 					<description>TV Show label</description>
-					<left>20</left>
+					<left>0</left>
 					<top>30</top>
 					<width>910</width>
 					<height>25</height>
@@ -217,7 +169,7 @@
 				</control>
 				<control type="label" id="1">
 					<description>Music Info label</description>
-					<left>20</left>
+					<left>0</left>
 					<top>30</top>
 					<width>910</width>
 					<height>25</height>
@@ -230,7 +182,7 @@
 				</control>
 				<control type="label" id="1">
 					<description>LiveTV Info label</description>
-					<left>20</left>
+					<left>0</left>
 					<top>30</top>
 					<width>910</width>
 					<height>25</height>
@@ -242,7 +194,7 @@
 					<visible>VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording</visible>
 				</control>
 				<control type="grouplist" id="1">
-					<left>20</left>
+					<left>0</left>
 					<top>60</top>
 					<width>910</width>
 					<height>35</height>

@@ -386,6 +386,41 @@
 			<thumb></thumb>
 			<visible>!String.IsEmpty(Skin.String(HomeVideosButton5))</visible>
 		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton6))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton6)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton6))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton6))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton7))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton7)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton7))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton7))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton8))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton8)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton8))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton8))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton9))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton9)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton9))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton9))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton10))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton10)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton10))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton10))</visible>
+		</item>
 	</include>
 	<include name="HomeAddonItemsMusic">
 		<item>

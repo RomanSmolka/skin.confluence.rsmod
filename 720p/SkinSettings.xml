@@ -8,7 +8,7 @@
 			<top>100r</top>
 			<width>1280</width>
 			<height>100</height>
-			<texture>floor.png</texture>
+			<texture>floor_old.png</texture>
 			<include>VisibleFadeEffect</include>
 		</control>
 		<include content="CommonWindowHeader">
@@ -19,12 +19,12 @@
 			<left>90</left>
 			<top>30</top>
 			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="225" />
-				<effect type="fade" start="0" end="100" time="225" />
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
-				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="225" />
-				<effect type="fade" start="100" end="0" time="225" />
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
 			<control type="image">
 				<left>5</left>
@@ -115,7 +115,7 @@
 						<width>260</width>
 						<height>81</height>
 						<texture border="5">MenuItemFO.png</texture>
-						<animation effect="fade" start="100" end="30" time="75" condition="!Control.HasFocus(9000)">Conditional</animation>
+						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
 					<control type="label">
 						<left>10</left>
@@ -742,6 +742,66 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetAddon(HomeVideosButton5,xbmc.addon.video)</onclick>
 						</control>
+						<control type="button" id="416">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]6[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton6))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton6,xbmc.addon.video)</onclick>
+						</control>
+						<control type="button" id="417">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]7[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton7))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton7,xbmc.addon.video)</onclick>
+						</control>
+						<control type="button" id="418">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]8[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton8))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton8,xbmc.addon.video)</onclick>
+						</control>
+						<control type="button" id="419">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]9[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton9))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton9,xbmc.addon.video)</onclick>
+						</control>
+						<control type="button" id="520">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]10[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton10))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton10,xbmc.addon.video)</onclick>
+						</control>
 						<control type="label" id="420">
 							<width>750</width>
 							<height>45</height>
@@ -951,6 +1011,18 @@
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetAddon(HomeProgramButton5,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="446">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]6[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton6))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeProgramButton6,xbmc.addon.executable)</onclick>
 						</control>
 						<control type="label" id="450">
 							<width>750</width>

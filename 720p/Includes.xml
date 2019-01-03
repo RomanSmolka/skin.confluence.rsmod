@@ -886,7 +886,7 @@
 			<include>VisibleFadeEffect</include>
 			<animation effect="fade" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="200" condition="Window.Next(Home)">WindowClose</animation>
-			<control type="button">
+			<!-- <control type="button">
 				<description>push button</description>
 				<left>30</left>
 				<top>55r</top>
@@ -901,6 +901,16 @@
 				<onright>50</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
+			</control> -->
+			<control type="image">
+				<description>Player Icon</description>
+				<left>70</left>
+				<top>50r</top>
+				<width>36</width>
+				<height>36</height>
+				<aspectratio>keep</aspectratio>
+				<texture>special://skin/extras/equalizer_blue.gif</texture>
+				<visible>Player.HasAudio</visible>
 			</control>
 			<control type="image">
 				<description>Player Icon</description>
@@ -910,9 +920,10 @@
 				<height>35</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icon_player.png</texture>
+				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="label">
-				<left>85</left>
+				<left>115</left>
 				<top>53r</top>
 				<width>700</width>
 				<height>20</height>
@@ -925,7 +936,7 @@
 				<visible>!VideoPlayer.HasEpg | !VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="label">
-				<left>85</left>
+				<left>115</left>
 				<top>53r</top>
 				<width>700</width>
 				<height>20</height>
@@ -1549,112 +1560,146 @@
 
 	</include>
 	<include name="HomeAddonsCommonLayout">
-		<include>Window_OpenClose_Animation</include>
-		<animation type="Visible">
-			<effect type="slide" start="0,30" end="0,0" delay="150" easing="out" tween="quadratic" time="150" />
-			<effect type="fade" start="0" end="100" delay="150" time="150" />
-		</animation>
-		<animation type="Hidden">
-			<effect type="zoom" start="100" end="70" center="auto" easing="in" tween="quadratic" time="225" />
-			<effect type="fade" start="100" end="0" time="225" />
-		</animation>
-		<hitrect x="0" y="530" w="1280" h="120" />
-		<left>0</left>
-		<top>190r</top>
-		<width>1280</width>
-		<height>200</height>
-		<pagecontrol/>
-		<scrolltime>300</scrolltime>
-		<focusposition>3</focusposition>
-		<movement>2</movement>
-		<orientation>Horizontal</orientation>
-		<itemlayout height="200" width="182">
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>180</width>
-				<height>120</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">button-nofocus.png</bordertexture>
-				<bordersize>3</bordersize>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+		<param name="id"/>
+		<definition>
+			<include>Window_OpenClose_Animation</include>
+			<animation type="Visible">
+				<effect type="slide" start="0,30" end="0,0" delay="200" easing="out" tween="quadratic" time="200"/>
+				<effect type="fade" start="0" end="100" delay="200" time="200"/>
+			</animation>
+			<animation type="Hidden">
+				<effect type="zoom" start="100" end="70" center="640,500" easing="in" tween="quadratic" time="300"/>
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<animation effect="slide" start="0,0" end="185,0" time="0" condition="Integer.IsGreater(Container($PARAM[id]).NumItems,4)">conditional</animation>
+			<animation effect="slide" start="0,0" end="276,0" time="0" condition="String.IsEqual(Container($PARAM[id]).NumItems,4)">conditional</animation>
+			<animation effect="slide" start="0,0" end="367,0" time="0" condition="String.IsEqual(Container($PARAM[id]).NumItems,3)">conditional</animation>
+			<animation effect="slide" start="0,0" end="458,0" time="0" condition="String.IsEqual(Container($PARAM[id]).NumItems,2)">conditional</animation>
+			<animation effect="slide" start="0,0" end="549,0" time="0" condition="String.IsEqual(Container($PARAM[id]).NumItems,1)">conditional</animation>
+			<hitrect x="0" y="530" w="1280" h="120" />
+			<left>0</left>
+			<top>210r</top>
+			<height>200</height>
+			<orientation>Horizontal</orientation>
+			<pagecontrol>-</pagecontrol>
+			<scrolltime tween="cubic" easing="inout">300</scrolltime>
+			<width min="182" max="910">auto</width>
+			<itemlayout height="200" width="182">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>180</width>
+					<height>120</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<bordertexture border="5"></bordertexture>
+					<bordersize>3</bordersize>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="label">
+					<left>1</left>
+					<top>125</top>
+					<width>180</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>grey2</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="200" width="182">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>180</width>
+					<height>120</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<bordertexture border="5"></bordertexture>
+					<bordersize>3</bordersize>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<visible>!ControlGroup(9002).HasFocus</visible>
+					<!-- <animation type="Unfocus">
+						<effect type="zoom" start="108" end="100" easing="out" time="100" center="auto" />
+					</animation> -->
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>180</width>
+					<height>120</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<bordertexture border="5">folder-focus.png</bordertexture>
+					<bordersize>3</bordersize>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<visible>ControlGroup(9002).HasFocus</visible>
+					<animation type="Focus">
+						<effect type="zoom" end="108" easing="out" time="120" center="auto" tween="cubic" />
+					</animation>
+					<animation type="Unfocus">
+						<effect type="zoom" start="108" end="100" easing="out" time="50" center="auto" />
+					</animation>
+				</control>
+				<control type="label">
+					<left>1</left>
+					<top>125</top>
+					<width>180</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>Control.HasFocus(9002)</visible>
+				</control>
+				<control type="label">
+					<left>1</left>
+					<top>125</top>
+					<width>180</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>!Control.HasFocus(9002)</visible>
+					<animation type="Focus">
+						<effect type="slide" end="0,7" easing="out" time="120" tween="cubic" />
+					</animation>
+					<animation type="Unfocus">
+						<effect type="slide" start="0,7" easing="out" time="100" />
+					</animation>
+				</control>
+			</focusedlayout>
+		</definition>
+	</include>
+	<include name="HomeAddonsArrows">
+		<param name="id"/>
+		<definition>
+			<control type="button">
+					<description>left Arrow</description>
+					<left>140</left>
+					<top>170r</top>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-left.png</texturefocus>
+					<texturenofocus>arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move($PARAM[id],-1)</onclick>
+					<visible>Control.HasFocus($PARAM[id]) + Container($PARAM[id]).HasPrevious</visible>
+					<include>VisibleFadeEffect</include>
 			</control>
-			<control type="image">
-				<left>5</left>
-				<top>120</top>
-				<width>170</width>
-				<height>110</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
+			<control type="button">
+					<description>right Arrow</description>
+					<left>1110</left>
+					<top>170r</top>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>arrow-big-right.png</texturefocus>
+					<texturenofocus>arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move($PARAM[id],1)</onclick>
+					<visible>Control.HasFocus($PARAM[id]) + Container($PARAM[id]).HasNext</visible>
+					<include>VisibleFadeEffect</include>
 			</control>
-			<control type="label">
-				<left>1</left>
-				<top>125</top>
-				<width>180</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</itemlayout>
-		<focusedlayout height="200" width="182">
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>180</width>
-				<height>120</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">button-nofocus.png</bordertexture>
-				<bordersize>3</bordersize>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
-				<visible>!ControlGroup(9002).HasFocus</visible>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>180</width>
-				<height>120</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="5">folder-focus.png</bordertexture>
-				<bordersize>3</bordersize>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
-				<visible>ControlGroup(9002).HasFocus</visible>
-			</control>
-			<control type="image">
-				<left>5</left>
-				<top>120</top>
-				<width>170</width>
-				<height>110</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="label">
-				<left>1</left>
-				<top>125</top>
-				<width>180</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>white</textcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>ControlGroup(9002).HasFocus</visible>
-			</control>
-			<control type="label">
-				<left>1</left>
-				<top>125</top>
-				<width>180</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>!ControlGroup(9002).HasFocus</visible>
-			</control>
-		</focusedlayout>
+		</definition>
 	</include>
 	<include name="TVNextAiredListCommonLayout">
 		<itemlayout height="150" width="280">

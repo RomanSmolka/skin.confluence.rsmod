@@ -35,6 +35,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
+						<visible>!Container.Content(songs) | ListItem.IsParentFolder</visible>
 					</control>
 					<control type="label">
 						<left>280</left>
@@ -62,6 +63,45 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+					</control>
+					<control type="label">
+						<left>595</left>
+						<top>0</top>
+						<width>25</width>
+						<height>40</height>
+						<font>font12</font>
+						<textcolor>orange</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.RatingAndVotes]</label>
+						<visible>Container.Content(Movies) + !String.IsEmpty(ListItem.RatingAndVotes)</visible>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>25</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey3</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>Container.Content(songs)</visible>
+					</control>
+					<control type="label">
+						<left>45</left>
+						<top>0</top>
+						<width>580</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Title]</label>
+						<visible>Container.Content(songs)</visible>
 					</control>
 					<control type="image">
 						<left>625</left>
@@ -128,6 +168,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
+						<visible>!Container.Content(songs) | ListItem.IsParentFolder</visible>
 					</control>
 					<control type="label">
 						<left>280</left>
@@ -155,6 +196,45 @@
 						<label>$INFO[ListItem.Label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
 						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+					</control>
+					<control type="label">
+						<left>595</left>
+						<top>0</top>
+						<width>25</width>
+						<height>40</height>
+						<font>font12</font>
+						<textcolor>orange</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.RatingAndVotes]</label>
+						<visible>Container.Content(Movies) + !String.IsEmpty(ListItem.RatingAndVotes)</visible>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>25</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey3</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>Container.Content(songs)</visible>
+					</control>
+					<control type="label">
+						<left>45</left>
+						<top>0</top>
+						<width>580</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Title]</label>
+						<visible>Container.Content(songs)</visible>
 					</control>
 					<control type="image">
 						<left>625</left>
