@@ -1,4 +1,4 @@
-#Mod of the original Kodi Confluence skin
+# Mod of the original Kodi Confluence skin
 
 Compatibility: Kodi 18 Leia and newer
 
